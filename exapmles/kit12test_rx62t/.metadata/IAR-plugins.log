@@ -30,3 +30,19 @@
 17:03:48,817 [Worker-1       ] TRACE providers.SdkRegistry  - Getting provider (rx, 2.20) from the sdk registry
 17:03:48,817 [Worker-1       ] TRACE providers.SdkRegistry  - Creating provider (rx, 2.20)
 17:03:48,818 [Worker-1       ] INFO  providers.SdkRegistry  - Using SdkProvider for rx-2.20: <sdkprovider id=iar.sdkprovider.rx, class=com.iar.cdt.rx.toolchain.RXSdkProvider, displayName=RX Sdk, displayVersion=2.20>
+15:07:29,875 [Worker-5       ] DEBUG providers.SdkRegistry  - Scanning available SDK-providers: 
+15:07:29,885 [Worker-5       ] DEBUG providers.SdkRegistry  - RL78 Sdk (iar.sdkprovider.rl78, rl78, 1.10): com.iar.cdt.rl78.toolchain.RL78SdkProvider
+15:07:29,885 [Worker-5       ] DEBUG providers.SdkRegistry  - RX Sdk (iar.sdkprovider.rx, rx, 2.20): com.iar.cdt.rx.toolchain.RXSdkProvider
+15:07:29,885 [Worker-5       ] DEBUG providers.SdkRegistry  - V850 Sdk (iar.sdkprovider.v850, v850, 3.70a): com.iar.cdt.v850.toolchain.V850SdkProvider
+15:07:29,885 [Worker-5       ] DEBUG providers.SdkRegistry  - Scanning available Debugger providers: 
+15:07:31,072 [Worker-5       ] TRACE providers.SdkRegistry  - Getting provider (v850, 3.70a) from the sdk registry
+15:07:31,072 [Worker-5       ] TRACE providers.SdkRegistry  - Creating provider (v850, 3.70a)
+15:07:31,072 [Worker-5       ] INFO  providers.SdkRegistry  - Using SdkProvider for v850-3.70a: <sdkprovider id=iar.sdkprovider.v850, class=com.iar.cdt.v850.toolchain.V850SdkProvider, displayName=V850 Sdk, displayVersion=3.70a>
+15:07:31,088 [Worker-5       ] TRACE providers.SdkRegistry  - Getting provider (rl78, 1.10) from the sdk registry
+15:07:31,088 [Worker-5       ] TRACE providers.SdkRegistry  - Creating provider (rl78, 1.10)
+15:07:31,088 [Worker-5       ] INFO  providers.SdkRegistry  - Using SdkProvider for rl78-1.10: <sdkprovider id=iar.sdkprovider.rl78, class=com.iar.cdt.rl78.toolchain.RL78SdkProvider, displayName=RL78 Sdk, displayVersion=1.10>
+15:07:31,119 [Worker-5       ] TRACE project.AbstractCProjectListener  - Registered project listener com.iar.cdt.generic.toolchain.project.ForceScannerDiscoveryListener@531dde for project ids iar.rx.toolchain.project.exe 
+15:07:31,119 [Worker-5       ] TRACE project.AbstractCProjectListener  - Registered project listener com.iar.cdt.rx.toolchain.language.RXLanguageMappingsProjectListener@6be4da for project ids iar.rx.toolchain.project.exe 
+15:07:31,119 [Worker-5       ] TRACE providers.SdkRegistry  - Getting provider (rx, 2.20) from the sdk registry
+15:07:31,119 [Worker-5       ] TRACE providers.SdkRegistry  - Creating provider (rx, 2.20)
+15:07:31,119 [Worker-5       ] INFO  providers.SdkRegistry  - Using SdkProvider for rx-2.20: <sdkprovider id=iar.sdkprovider.rx, class=com.iar.cdt.rx.toolchain.RXSdkProvider, displayName=RX Sdk, displayVersion=2.20>

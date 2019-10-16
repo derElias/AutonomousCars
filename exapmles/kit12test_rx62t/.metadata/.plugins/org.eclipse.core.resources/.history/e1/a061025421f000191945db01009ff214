@@ -51,7 +51,7 @@ bit3 2 1 0
 
 /* Constant settings */
 #define PWM_CYCLE       24575           /* Motor PWM period (16ms)     */
-#define SERVO_CENTER    2365            /* Servo center value          */
+#define SERVO_CENTER    2360            /* Servo center value          */
 #define HANDLE_STEP     13              /* 1 degree value              */
 
 /*======================================*/

@@ -1,4 +1,5 @@
-#Wed Oct 09 17:03:34 CEST 2019
+#Wed Oct 16 16:03:53 CEST 2019
 eclipse.preferences.version=1
+preferredTargets=org.eclipse.cdt.debug.ui.toggleCBreakpointTarget\:org.eclipse.cdt.debug.ui.toggleCBreakpointTarget|
 org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<launchPerspectives/>\r\n
 org.eclipse.debug.ui.errorColor=0,100,0
