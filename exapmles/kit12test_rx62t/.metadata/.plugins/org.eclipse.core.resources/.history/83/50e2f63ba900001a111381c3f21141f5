@@ -142,31 +142,29 @@ void main(void)
                 pattern = 21;
                 break;
             }
-            /*
-            if( check_rightline() ) {   // Right half line detection check
+            if( check_rightline() ) {   /* Right half line detection check */
                 pattern = 51;
                 break;
             }
-            if( check_leftline() ) {    // Left half line detection check
+            if( check_leftline() ) {    /* Left half line detection check */
                 pattern = 61;
                 break;
             }
-            */
             switch( sensor_inp(MASK3_3) ) {
                 case 0x00:
-                    // Center -> straight
+                    /* Center -> straight */
                     handle( 0 );
                     motor( 100 ,100 );
                     break;
 
                 case 0x04:
-                    // Slight amount left of center -> slight turn to right
+                    /* Slight amount left of center -> slight turn to right */
                     handle( 5 );
                     motor( 100 ,100 );
                     break;
 
                 case 0x06:
-                    // Small amount left of center -> small turn to right
+                    /* Small amount left of center -> small turn to right */
                     handle( 10 );
                     motor( 80 ,67 );
                     break;
@@ -220,16 +218,14 @@ void main(void)
                 pattern = 21;
                 break;
             }
-            /*
-            if( check_rightline() ) {   // Right half line detection check
+            if( check_rightline() ) {   /* Right half line detection check */
                 pattern = 51;
                 break;
             }
-            if( check_leftline() ) {    //Left half line detection check
+            if( check_leftline() ) {    /* Left half line detection check */
                 pattern = 61;
                 break;
             }
-            */
             if( sensor_inp(MASK3_3) == 0x06 ) {
                 pattern = 11;
             }
@@ -241,16 +237,14 @@ void main(void)
                 pattern = 21;
                 break;
             }
-            /*
-            if( check_rightline() ) {   // Right half line detection check
+            if( check_rightline() ) {   /* Right half line detection check */
                 pattern = 51;
                 break;
             }
-            if( check_leftline() ) {    // Left half line detection check/
+            if( check_leftline() ) {    /* Left half line detection check */
                 pattern = 61;
                 break;
             }
-            */
             if( sensor_inp(MASK3_3) == 0x60 ) {
                 pattern = 11;
             }
@@ -275,20 +269,20 @@ void main(void)
 
         case 23:
             /* Trace, crank detection after cross line */
-            if( (sensor_inp(MASK4_4)==0xf8) || (sensor_inp(MASK4_4)==0x70) || (sensor_inp(MASK4_4)==0xe0)|| (sensor_inp(MASK4_4)==0xfc)) {
+            if( sensor_inp(MASK4_4)==0xf8 || sensor_inp(MASK4_4)==0x70 ) {
                 /* Left crank determined -> to left crank clearing processing */
                 led_out( 0x1 );
-                handle( -60 );
-                motor( 20, 70 );
+                handle( -38 );
+                motor( 10 ,100 );
                 pattern = 31;
                 cnt1 = 0;
                 break;
             }
-            if( (sensor_inp(MASK4_4)==0x1f) || (sensor_inp(MASK4_4)==0x1e)||(sensor_inp(MASK4_4)==0x3f)) {
+            if( sensor_inp(MASK4_4)==0x1f || sensor_inp(MASK4_4)==0x1e) {
                 /* Right crank determined -> to right crank clearing processing */
                 led_out( 0x2 );
-                handle( 60 );
-                motor( 70 ,20 );
+                handle( 38 );
+                motor( 100 ,10 );
                 pattern = 41;
                 cnt1 = 0;
                 break;
