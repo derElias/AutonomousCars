@@ -142,7 +142,7 @@ void main(void)
                 pattern = 21;
                 break;
             }
-/*
+            /*
             if( check_rightline() ) {   // Right half line detection check
                 pattern = 51;
                 break;
@@ -151,7 +151,7 @@ void main(void)
                 pattern = 61;
                 break;
             }
-*/
+            */
             switch( sensor_inp(MASK3_3) ) {
                 case 0x00:
                     // Center -> straight
@@ -220,37 +220,37 @@ void main(void)
                 pattern = 21;
                 break;
             }
-
+            /*
             if( check_rightline() ) {   // Right half line detection check
-                pattern = 71;
+                pattern = 51;
                 break;
             }
             if( check_leftline() ) {    //Left half line detection check
                 pattern = 61;
                 break;
             }
-
+            */
             if( sensor_inp(MASK3_3) == 0x06 ) {
                 pattern = 11;
             }
             break;
 
         case 13:
-            // Check end of large turn to left
+            /* Check end of large turn to left */
             if( check_crossline() ) {   /* Cross line check during large turn */
                 pattern = 21;
                 break;
             }
-
+            /*
             if( check_rightline() ) {   // Right half line detection check
-                pattern = 71;
+                pattern = 51;
                 break;
             }
             if( check_leftline() ) {    // Left half line detection check/
                 pattern = 61;
                 break;
             }
-
+            */
             if( sensor_inp(MASK3_3) == 0x60 ) {
                 pattern = 11;
             }
@@ -278,7 +278,7 @@ void main(void)
             if( (sensor_inp(MASK4_4)==0xf8) || (sensor_inp(MASK4_4)==0x70) || (sensor_inp(MASK4_4)==0xe0)|| (sensor_inp(MASK4_4)==0xfc)) {
                 /* Left crank determined -> to left crank clearing processing */
                 led_out( 0x1 );
-                handle( -40 );
+                handle( -60 );
                 motor( 20, 70 );
                 pattern = 31;
                 cnt1 = 0;
@@ -287,7 +287,7 @@ void main(void)
             if( (sensor_inp(MASK4_4)==0x1f) || (sensor_inp(MASK4_4)==0x1e)||(sensor_inp(MASK4_4)==0x3f)) {
                 /* Right crank determined -> to right crank clearing processing */
                 led_out( 0x2 );
-                handle( 40 );
+                handle( 60 );
                 motor( 70 ,20 );
                 pattern = 41;
                 cnt1 = 0;
@@ -367,13 +367,10 @@ void main(void)
                 pattern = 53;
                 cnt1 = 0;
             }
-            if (check_crossline()){
-                            	pattern = 21;
             break;
 
         case 53:
             /* Trace, lane change after right half line detection */
-
             if( sensor_inp(MASK4_4) == 0x00 ) {
                 handle( 15 );
                 motor( 40 ,31 );
@@ -430,9 +427,6 @@ void main(void)
             /* Read but ignore 2nd time */
             if( cnt1 > 100 ){
                 pattern = 63;
-                }
-            if (check_crossline()){
-                            	pattern = 21;
                 cnt1 = 0;
             }
             break;
@@ -482,73 +476,6 @@ void main(void)
             }
             break;
 
-
-        case 71:
-            /* Processing at 1st right half line detection */
-            led_out( 0x2 );
-            handle( 0 );
-            motor( 0 ,0 );
-            pattern = 52;
-            cnt1 = 0;
-            break;
-
-        case 72:
-            /* Read but ignore 2nd time */
-            if( cnt1 > 100 ){
-                pattern = 53;
-                if (check_crossline()){
-                	pattern = 21;
-                }
-                cnt1 = 0;
-            }
-            break;
-
-        case 73:
-            /* Trace, lane change after right half line detection */
-
-            if( sensor_inp(MASK4_4) == 0x00 ) {
-                handle( 15 );
-                motor( 40 ,31 );
-                pattern = 54;
-                cnt1 = 0;
-                break;
-            }
-            switch( sensor_inp(MASK3_3) ) {
-                case 0x00:
-                    /* Center -> straight */
-                    handle( 0 );
-                    motor( 40 ,40 );
-                    break;
-                case 0x04:
-                case 0x06:
-                case 0x07:
-                case 0x03:
-                    /* Left of center -> turn to right */
-                    handle( 8 );
-                    motor( 40 ,35 );
-                    break;
-                case 0x20:
-                case 0x60:
-                case 0xe0:
-                case 0xc0:
-                    /* Right of center -> turn to left */
-                    handle( -8 );
-                    motor( 35 ,40 );
-                    break;
-                default:
-                    break;
-            }
-            break;
-
-        case 74:
-            /* Right lane change end check */
-            if( sensor_inp( MASK4_4 ) == 0x3c ) {
-                led_out( 0x0 );
-                pattern = 11;
-                cnt1 = 0;
-            }
-            break;
-
         default:
             /* If neither, return to standby state */
             pattern = 0;
@@ -556,8 +483,6 @@ void main(void)
         }
     }
 }
-
-
 
 /***********************************************************************/
 /* RX62T Initialization                                                */

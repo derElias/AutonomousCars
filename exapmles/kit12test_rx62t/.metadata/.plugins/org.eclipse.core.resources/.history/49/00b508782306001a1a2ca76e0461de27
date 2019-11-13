@@ -142,16 +142,16 @@ void main(void)
                 pattern = 21;
                 break;
             }
-/*
+
             if( check_rightline() ) {   // Right half line detection check
-                pattern = 51;
+                pattern = 71;
                 break;
             }
             if( check_leftline() ) {    // Left half line detection check
                 pattern = 61;
                 break;
             }
-*/
+
             switch( sensor_inp(MASK3_3) ) {
                 case 0x00:
                     // Center -> straight
@@ -367,8 +367,6 @@ void main(void)
                 pattern = 53;
                 cnt1 = 0;
             }
-            if (check_crossline()){
-                            	pattern = 21;
             break;
 
         case 53:
@@ -430,9 +428,9 @@ void main(void)
             /* Read but ignore 2nd time */
             if( cnt1 > 100 ){
                 pattern = 63;
+                if (check_crossline()){
+                	pattern = 21;
                 }
-            if (check_crossline()){
-                            	pattern = 21;
                 cnt1 = 0;
             }
             break;
