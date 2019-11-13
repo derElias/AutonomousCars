@@ -142,7 +142,7 @@ void main(void)
                 pattern = 21;
                 break;
             }
-/*
+
             if( check_rightline() ) {   // Right half line detection check
                 pattern = 51;
                 break;
@@ -151,7 +151,7 @@ void main(void)
                 pattern = 61;
                 break;
             }
-*/
+
             switch( sensor_inp(MASK3_3) ) {
                 case 0x00:
                     // Center -> straight
@@ -475,73 +475,6 @@ void main(void)
 
         case 64:
             /* Left lane change end check */
-            if( sensor_inp( MASK4_4 ) == 0x3c ) {
-                led_out( 0x0 );
-                pattern = 11;
-                cnt1 = 0;
-            }
-            break;
-
-
-        case 71:
-            /* Processing at 1st right half line detection */
-            led_out( 0x2 );
-            handle( 0 );
-            motor( 0 ,0 );
-            pattern = 52;
-            cnt1 = 0;
-            break;
-
-        case 72:
-            /* Read but ignore 2nd time */
-            if( cnt1 > 100 ){
-                pattern = 53;
-                if (check_crossline()){
-                	pattern = 21;
-                }
-                cnt1 = 0;
-            }
-            break;
-
-        case 73:
-            /* Trace, lane change after right half line detection */
-
-            if( sensor_inp(MASK4_4) == 0x00 ) {
-                handle( 15 );
-                motor( 40 ,31 );
-                pattern = 54;
-                cnt1 = 0;
-                break;
-            }
-            switch( sensor_inp(MASK3_3) ) {
-                case 0x00:
-                    /* Center -> straight */
-                    handle( 0 );
-                    motor( 40 ,40 );
-                    break;
-                case 0x04:
-                case 0x06:
-                case 0x07:
-                case 0x03:
-                    /* Left of center -> turn to right */
-                    handle( 8 );
-                    motor( 40 ,35 );
-                    break;
-                case 0x20:
-                case 0x60:
-                case 0xe0:
-                case 0xc0:
-                    /* Right of center -> turn to left */
-                    handle( -8 );
-                    motor( 35 ,40 );
-                    break;
-                default:
-                    break;
-            }
-            break;
-
-        case 74:
-            /* Right lane change end check */
             if( sensor_inp( MASK4_4 ) == 0x3c ) {
                 led_out( 0x0 );
                 pattern = 11;
