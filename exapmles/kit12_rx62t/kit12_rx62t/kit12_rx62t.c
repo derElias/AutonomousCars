@@ -368,7 +368,7 @@ void main(void)
                 cnt1 = 0;
             }
             if (check_crossline()){
-                            	pattern = 21;
+                pattern = 21;
             break;
 
         case 53:
@@ -430,10 +430,10 @@ void main(void)
             /* Read but ignore 2nd time */
             if( cnt1 > 100 ){
                 pattern = 63;
-                }
-            if (check_crossline()){ //test
-                            	pattern = 21;
                 cnt1 = 0;
+            }
+            if (check_crossline()){
+            	pattern = 21;
             }
             break;
 
