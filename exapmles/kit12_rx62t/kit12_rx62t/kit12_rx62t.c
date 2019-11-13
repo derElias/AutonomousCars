@@ -431,7 +431,7 @@ void main(void)
             if( cnt1 > 100 ){
                 pattern = 63;
                 }
-            if (check_crossline()){
+            if (check_crossline()){ //test
                             	pattern = 21;
                 cnt1 = 0;
             }
