@@ -40,15 +40,6 @@ Parsing the ELF input file.....
 Converting the DWARF information....
 Constructing the output ELF image....
 Saving the ELF output file kit12_rx62t.x
-warning: Code section size (0xF) not a multiple of 4
-warning:     (section starting at 0xFFFF8F71)
-warning: *********************************************************************
-warning: Eclipse hardware debug requires the base address of each code section
-warning: in a big-endian RX application to be 4-byte aligned and the length of
-warning: each code section to be a multiple of 4. You will not be able to
-warning: debug your application as currently linked. Please modify the section
-warning: addresses in your linker settings accordingly and rebuild.
-warning: *********************************************************************
 
 
 'Build complete.'

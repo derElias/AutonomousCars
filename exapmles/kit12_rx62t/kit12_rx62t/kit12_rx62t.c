@@ -369,6 +369,7 @@ void main(void)
             }
             if (check_crossline()){
                 pattern = 21;
+            }
             break;
 
         case 53:

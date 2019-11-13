@@ -2,6 +2,33 @@
 **** Build of configuration Debug for project kit12test_rx62t ****
 
 make all 
+'Scanning started: C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\dbsct.c'
+scandep1 -MM -MP -MF  "kit12test_rx62t/dbsct.d" -MT  "kit12test_rx62t/dbsct.d"  -IC:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -D__RX600=1 -D__BIG=1   -D__FPU=1  -D__RON=1 -D__UCHAR=1 -D__DBL4=1 -D__UBIT=1 -D__BITRIGHT=1 -D__DOFF=1   -D__RENESAS__=1 -D__RENESAS_VERSION__=0x010201 -D__RX=1   -E -quiet -I. -C C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\dbsct.c
+'Finished scanning: C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\dbsct.c'
+
+'Building file: C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/dbsct.c'
+'Invoking: Compiler'
+ccrx -output=obj=kit12test_rx62t/dbsct.obj -include=C:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -debug -nologo -section=L=C -cpu=rx600 -endian=big  -lang=c "C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/dbsct.c"
+'Finished building: C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/dbsct.c'
+
+'Scanning started: C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\hwsetup.c'
+scandep1 -MM -MP -MF  "kit12test_rx62t/hwsetup.d" -MT  "kit12test_rx62t/hwsetup.d"  -IC:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -D__RX600=1 -D__BIG=1   -D__FPU=1  -D__RON=1 -D__UCHAR=1 -D__DBL4=1 -D__UBIT=1 -D__BITRIGHT=1 -D__DOFF=1   -D__RENESAS__=1 -D__RENESAS_VERSION__=0x010201 -D__RX=1   -E -quiet -I. -C C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\hwsetup.c
+'Finished scanning: C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\hwsetup.c'
+
+'Building file: C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/hwsetup.c'
+'Invoking: Compiler'
+ccrx -output=obj=kit12test_rx62t/hwsetup.obj -include=C:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -debug -nologo -section=L=C -cpu=rx600 -endian=big  -lang=c "C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/hwsetup.c"
+'Finished building: C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/hwsetup.c'
+
+'Scanning started: C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\intprg.c'
+scandep1 -MM -MP -MF  "kit12test_rx62t/intprg.d" -MT  "kit12test_rx62t/intprg.d"  -IC:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -D__RX600=1 -D__BIG=1   -D__FPU=1  -D__RON=1 -D__UCHAR=1 -D__DBL4=1 -D__UBIT=1 -D__BITRIGHT=1 -D__DOFF=1   -D__RENESAS__=1 -D__RENESAS_VERSION__=0x010201 -D__RX=1   -E -quiet -I. -C C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\intprg.c
+'Finished scanning: C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\intprg.c'
+
+'Building file: C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/intprg.c'
+'Invoking: Compiler'
+ccrx -output=obj=kit12test_rx62t/intprg.obj -include=C:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -debug -nologo -section=L=C -cpu=rx600 -endian=big  -lang=c "C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/intprg.c"
+'Finished building: C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/intprg.c'
+
 'Scanning started: C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\KIT12T~1.C'
 scandep1 -MM -MP -MF  "kit12test_rx62t/kit12test_rx62t.d" -MT  "kit12test_rx62t/kit12test_rx62t.d"  -IC:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -D__RX600=1 -D__BIG=1   -D__FPU=1  -D__RON=1 -D__UCHAR=1 -D__DBL4=1 -D__UBIT=1 -D__BITRIGHT=1 -D__DOFF=1   -D__RENESAS__=1 -D__RENESAS_VERSION__=0x010201 -D__RX=1   -E -quiet -I. -C C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\KIT12T~1.C
 'Finished scanning: C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\KIT12T~1.C'
@@ -11,10 +38,37 @@ scandep1 -MM -MP -MF  "kit12test_rx62t/kit12test_rx62t.d" -MT  "kit12test_rx62t/
 ccrx -output=obj=kit12test_rx62t/kit12test_rx62t.obj -include=C:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -debug -nologo -section=L=C -cpu=rx600 -endian=big  -lang=c "C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/kit12test_rx62t.c"
 'Finished building: C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/kit12test_rx62t.c'
 
+'Scanning started: C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\resetprg.c'
+scandep1 -MM -MP -MF  "kit12test_rx62t/resetprg.d" -MT  "kit12test_rx62t/resetprg.d"  -IC:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -D__RX600=1 -D__BIG=1   -D__FPU=1  -D__RON=1 -D__UCHAR=1 -D__DBL4=1 -D__UBIT=1 -D__BITRIGHT=1 -D__DOFF=1   -D__RENESAS__=1 -D__RENESAS_VERSION__=0x010201 -D__RX=1   -E -quiet -I. -C C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\resetprg.c
+'Finished scanning: C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\resetprg.c'
+
+'Building file: C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/resetprg.c'
+'Invoking: Compiler'
+ccrx -output=obj=kit12test_rx62t/resetprg.obj -include=C:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -debug -nologo -section=L=C -cpu=rx600 -endian=big  -lang=c "C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/resetprg.c"
+'Finished building: C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/resetprg.c'
+
+'Scanning started: C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\sbrk.c'
+scandep1 -MM -MP -MF  "kit12test_rx62t/sbrk.d" -MT  "kit12test_rx62t/sbrk.d"  -IC:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -D__RX600=1 -D__BIG=1   -D__FPU=1  -D__RON=1 -D__UCHAR=1 -D__DBL4=1 -D__UBIT=1 -D__BITRIGHT=1 -D__DOFF=1   -D__RENESAS__=1 -D__RENESAS_VERSION__=0x010201 -D__RX=1   -E -quiet -I. -C C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\sbrk.c
+'Finished scanning: C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\sbrk.c'
+
+'Building file: C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/sbrk.c'
+'Invoking: Compiler'
+ccrx -output=obj=kit12test_rx62t/sbrk.obj -include=C:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -debug -nologo -section=L=C -cpu=rx600 -endian=big  -lang=c "C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/sbrk.c"
+'Finished building: C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/sbrk.c'
+
+'Scanning started: C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\vecttbl.c'
+scandep1 -MM -MP -MF  "kit12test_rx62t/vecttbl.d" -MT  "kit12test_rx62t/vecttbl.d"  -IC:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -D__RX600=1 -D__BIG=1   -D__FPU=1  -D__RON=1 -D__UCHAR=1 -D__DBL4=1 -D__UBIT=1 -D__BITRIGHT=1 -D__DOFF=1   -D__RENESAS__=1 -D__RENESAS_VERSION__=0x010201 -D__RX=1   -E -quiet -I. -C C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\vecttbl.c
+'Finished scanning: C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12T~1\vecttbl.c'
+
+'Building file: C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/vecttbl.c'
+'Invoking: Compiler'
+ccrx -output=obj=kit12test_rx62t/vecttbl.obj -include=C:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -debug -nologo -section=L=C -cpu=rx600 -endian=big  -lang=c "C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/vecttbl.c"
+'Finished building: C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12test_rx62t/vecttbl.c'
+
 'Invoking: Linker'
 'Building target:'
 optlnk    -library="C:\WORKSP~1\KIT12_~1\KIT12T~1\Debug\kit12test_rx62t.lib"   -noprelink -list="kit12test_rx62t.map" -nooptimize -start=B_1,R_1,B_2,R_2,B,R,SU,SI/01000,PResetPRG/0FFFF8000,C_1,C_2,C,C"$"*,D*,P,PIntPRG,W*/0FFFF8100,FIXEDVECT/0FFFFFFD0 -nologo -nomessage -rom=D=R,D_1=R_1,D_2=R_2 -output="C:\WorkSpace\kit12_rx62t\kit12test_rx62t\Debug\kit12test_rx62t.abs" -subcommand="C:/WorkSpace/kit12_rx62t/kit12test_rx62t\Debug\LinkerSubCommand.tmp"
-License expires in 53 days
+License expires in 25 days
 
 Optimizing Linkage Editor Completed
 'Finished building:'
@@ -26,7 +80,7 @@ Optimizing Linkage Editor V.10.02.00.000
 Copyright (C) 1989 (1989 - 2011) Renesas Electronics Corporation and
 Renesas Solutions Corp. All rights reserved.
 SentinelRMS (C) 1989-2010 SafeNet, Inc. All rights reserved.
-License expires in 53 days
+License expires in 25 days
 
 Optimizing Linkage Editor Completed
 'Finished building target:'
