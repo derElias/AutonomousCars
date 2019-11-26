@@ -375,7 +375,7 @@ void main(void)
         case 53:
             /* Trace, lane change after right half line detection */
 
-            if( sensor_inp(MASK4_4) == 0x00 ) {
+            if( sensor_inp(MASK4_4) == 0x00 ) { //Test 27.11.19
                 handle( 15 );
                 motor( 40 ,31 );
                 pattern = 54;
