@@ -422,7 +422,7 @@ void main(void)
           /* search line after case 54 */
           if (sensor_inp(MASK4_4) == 0xf8){
             handle(-8);
-            motor(-40,40) ;//left motor and right motor
+            motor(-100,40) ;//left motor reverse and right motor forward
             pattern = 11;
             cnt1=0;
           }
