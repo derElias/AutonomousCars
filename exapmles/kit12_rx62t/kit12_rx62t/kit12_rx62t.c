@@ -378,7 +378,7 @@ void main(void)
             if( sensor_inp(MASK4_4) == 0x00 ) { //Test 27.11.19
                 handle( 15 );
                 motor( 40 ,31 );
-                pattern = 55;
+                pattern = 54;
                 cnt1 = 0;
                 break;
             }
@@ -419,6 +419,7 @@ void main(void)
             break;
 
         case 55:
+<<<<<<< HEAD
             /* Right lane change end check */
             switch( sensor_inp(MASK4_4) ) {
                 case 0x00:
@@ -457,6 +458,16 @@ void main(void)
                     cnt1 = 0;
                 }
                 break;
+=======
+          /* search line after case 54 */
+          if (sensor_inp(MASK4_4) == 0xf8){
+            handle(-8);
+            motor(-40,40) ;//left motor and right motor
+            pattern = 11;
+            cnt1=0;
+          }
+          break;
+>>>>>>> bf3cbafde8ed08c5fc23df083a1a1121501b2922
 
         case 61:
             /* Processing at 1st left half line detection */
@@ -690,7 +701,7 @@ int check_rightline( void )
 
     ret = 0;
     b = sensor_inp(MASK4_4);
-    if( b==0x1f ) {
+    if( b==0x1f ) { //00011111
         ret = 1;
     }
     return ret;
@@ -707,7 +718,7 @@ int check_leftline( void )
 
     ret = 0;
     b = sensor_inp(MASK4_4);
-    if( b==0xf8 ) {
+    if( b==0xf8 ) {  //11111000
         ret = 1;
     }
     return ret;
