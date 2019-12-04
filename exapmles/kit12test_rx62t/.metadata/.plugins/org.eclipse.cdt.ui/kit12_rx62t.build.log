@@ -14,7 +14,7 @@ ccrx -output=obj=kit12_rx62t/kit12_rx62t.obj -include=C:\Renesas\e2studio\Tools\
 'Invoking: Linker'
 'Building target:'
 optlnk    -library="C:\WORKSP~1\KIT12_~1\KIT12_~1\Debug\kit12_rx62t.lib"   -noprelink -list="kit12_rx62t.map" -nooptimize -start=B_1,R_1,B_2,R_2,B,R,SU,SI/01000,PResetPRG/0FFFF8000,C_1,C_2,C,C"$"*,D*,P,PIntPRG,W*/0FFFF8100,FIXEDVECT/0FFFFFFD0 -nologo -nomessage -rom=D=R,D_1=R_1,D_2=R_2 -output="C:\WorkSpace\kit12_rx62t\kit12_rx62t\Debug\kit12_rx62t.abs" -subcommand="C:/WorkSpace/kit12_rx62t/kit12_rx62t\Debug\LinkerSubCommand.tmp"
-License expires in 11 days
+License expires in 4 days
 
 Optimizing Linkage Editor Completed
 'Finished building:'
@@ -26,7 +26,7 @@ Optimizing Linkage Editor V.10.02.00.000
 Copyright (C) 1989 (1989 - 2011) Renesas Electronics Corporation and
 Renesas Solutions Corp. All rights reserved.
 SentinelRMS (C) 1989-2010 SafeNet, Inc. All rights reserved.
-License expires in 11 days
+License expires in 4 days
 
 Optimizing Linkage Editor Completed
 'Finished building target:'
@@ -40,9 +40,8 @@ Parsing the ELF input file.....
 Converting the DWARF information....
 Constructing the output ELF image....
 Saving the ELF output file kit12_rx62t.x
-warning: Code section size (0x743) not a multiple of 4
-warning:     (section starting at 0xFFFF8558)
-warning: Code section at 0xFFFF8C9B not positioned on 4-byte-aligned boundary
+warning: Code section size (0xF) not a multiple of 4
+warning:     (section starting at 0xFFFF8F59)
 warning: *********************************************************************
 warning: Eclipse hardware debug requires the base address of each code section
 warning: in a big-endian RX application to be 4-byte aligned and the length of

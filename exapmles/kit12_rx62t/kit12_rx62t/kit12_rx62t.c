@@ -152,11 +152,18 @@ void main(void)
                 break;
             }
 
-            switch( sensor_inp(MASK3_3) ) {
+            switch( sensor_inp(MASK4_4) ) {
                 case 0x00:
                     // Center -> straight
                     handle( 0 );
-                    motor( 100 ,100 );
+                    motor( 0 ,0 );
+                    break;
+
+
+                case 0x18: //0001 1000
+                    // Center -> straight
+                    handle( 0 );
+                    motor( 100 , 100);
                     break;
 
                 case 0x04:
@@ -410,41 +417,25 @@ void main(void)
             break;
 
         case 54:
-            /* Right lane change end check */
-            if( sensor_inp( MASK4_4 ) == 0x3c ) {
-                led_out( 0x0 );
-                pattern = 11;
-                cnt1 = 0;
-            }
-            break;
 
-        case 55:
-<<<<<<< HEAD
-            /* Right lane change end check */
-            switch( sensor_inp(MASK4_4) ) {
+            switch( sensor_inp(0x0f) ) //Mask: 0000 1111
+            {
                 case 0x00:
                     break;
-                //cases for any single sensor
-                case 0x01:
-                case 0x02:
-                case 0x04:
-                case 0x08:
-                case 0x10:
-                case 0x20:
-                case 0x40:
-                case 0x80:
-                // cases for any two adjacent sensors
-                case 0x03:
-                case 0x06:
-                case 0x0c:
-                case 0x18:
-                case 0x30:
-                case 0x60:
-                case 0xc0:
+
+                case 0x02:		//0000 0010
+                case 0x04:		//0000 0100
+                case 0x06:		//0000 0110
+                case 0x08:		//0000 1000
+                case 0x0a:		//0000 1010
+                case 0x0c:		//0000 1100
+                case 0x0e:		//0000 1110
+                case 0x0f:		//0000 1111
+
                     led_out( 0x0 );
                     handle( -8 );
                     motor( 30 ,40 );
-                    pattern = 56;
+                    pattern = 55;
                     cnt1 = 0;
                     break;
                 default:
@@ -452,22 +443,13 @@ void main(void)
             }
             break;
 
-            case 56:
-                if( cnt1 > 400 ) {
+            case 55:
+                if( cnt1 > 600 ) {
                     pattern = 11;
                     cnt1 = 0;
                 }
                 break;
-=======
-          /* search line after case 54 */
-          if (sensor_inp(MASK4_4) == 0xf8){
-            handle(-8);
-            motor(-40,40) ;//left motor and right motor
-            pattern = 11;
-            cnt1=0;
-          }
-          break;
->>>>>>> bf3cbafde8ed08c5fc23df083a1a1121501b2922
+
 
         case 61:
             /* Processing at 1st left half line detection */
@@ -525,14 +507,33 @@ void main(void)
             }
             break;
 
-        case 64:
-            /* Left lane change end check */
-            if( sensor_inp( MASK4_4 ) == 0x3c ) {
-                led_out( 0x0 );
-                pattern = 11;
-                cnt1 = 0;
-            }
-            break;
+            case 64:
+                switch( sensor_inp(MASK4_0) )
+                {
+                    case 0x30:		//0011 0000
+                    case 0x40:		//0100 0000
+                    case 0x60:		//0110 0000
+                    case 0x70:		//0111 0000
+                    case 0xe0:		//1110 0000
+                    case 0xf0:		//1111 0000
+
+                        led_out( 0x0 );
+                        handle( 12 );
+                        motor( 70 ,40 );
+                        pattern = 65;
+                        cnt1 = 0;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+                case 65:
+                    if( cnt1 > 400 ) {
+                        pattern = 11;
+                        cnt1 = 0;
+                    }
+                    break;
 
         default:
             /* If neither, return to standby state */
