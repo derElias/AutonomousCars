@@ -17,6 +17,8 @@ This program supports the following boards:
 /* Include                              */
 /*======================================*/
 #include "iodefine.h"
+#include "uart.h"
+#include "uart.c"
 
 /*======================================*/
 /* Symbol definitions                   */
@@ -137,6 +139,8 @@ void main(void)
             break;
 
         case 11:
+        	SCI2_PullString("I am in case 11");
+
             /* Normal trace */
             if( check_crossline() ) {   /* Cross line check            */
                 pattern = 21;
@@ -152,11 +156,18 @@ void main(void)
                 break;
             }
 
-            switch( sensor_inp(MASK3_3) ) {
+            switch( sensor_inp(MASK4_4) ) {
                 case 0x00:
                     // Center -> straight
                     handle( 0 );
-                    motor( 100 ,100 );
+                    motor( 0 ,0 );
+                    break;
+
+
+                case 0x18: //0001 1000
+                    // Center -> straight
+                    handle( 0 );
+                    motor( 100 , 100);
                     break;
 
                 case 0x04:
@@ -378,7 +389,7 @@ void main(void)
             if( sensor_inp(MASK4_4) == 0x00 ) { //Test 27.11.19
                 handle( 15 );
                 motor( 40 ,31 );
-                pattern = 55;
+                pattern = 54;
                 cnt1 = 0;
                 break;
             }
@@ -410,41 +421,32 @@ void main(void)
             break;
 
         case 54:
-            /* Right lane change end check */
-            if( sensor_inp( MASK4_4 ) == 0x3c ) {
-                led_out( 0x0 );
-                pattern = 11;
-                cnt1 = 0;
-            }
-            break;
 
+<<<<<<< HEAD
         case 55:
 <<<<<<< HEAD
             /* Right lane change end check */
             switch( sensor_inp(MASK4_4) ) {
+=======
+            switch( sensor_inp(0x0f) ) //Mask: 0000 1111
+            {
+>>>>>>> master
                 case 0x00:
                     break;
-                //cases for any single sensor
-                case 0x01:
-                case 0x02:
-                case 0x04:
-                case 0x08:
-                case 0x10:
-                case 0x20:
-                case 0x40:
-                case 0x80:
-                // cases for any two adjacent sensors
-                case 0x03:
-                case 0x06:
-                case 0x0c:
-                case 0x18:
-                case 0x30:
-                case 0x60:
-                case 0xc0:
+
+                case 0x02:		//0000 0010
+                case 0x04:		//0000 0100
+                case 0x06:		//0000 0110
+                case 0x08:		//0000 1000
+                case 0x0a:		//0000 1010
+                case 0x0c:		//0000 1100
+                case 0x0e:		//0000 1110
+                case 0x0f:		//0000 1111
+
                     led_out( 0x0 );
                     handle( -8 );
                     motor( 30 ,40 );
-                    pattern = 56;
+                    pattern = 55;
                     cnt1 = 0;
                     break;
                 default:
@@ -452,12 +454,13 @@ void main(void)
             }
             break;
 
-            case 56:
-                if( cnt1 > 400 ) {
+            case 55:
+                if( cnt1 > 600 ) {
                     pattern = 11;
                     cnt1 = 0;
                 }
                 break;
+<<<<<<< HEAD
 =======
           /* search line after case 54 */
           if (sensor_inp(MASK4_4) == 0xf8){
@@ -468,6 +471,9 @@ void main(void)
           }
           break;
 >>>>>>> origin/master
+=======
+
+>>>>>>> master
 
         case 61:
             /* Processing at 1st left half line detection */
@@ -525,14 +531,33 @@ void main(void)
             }
             break;
 
-        case 64:
-            /* Left lane change end check */
-            if( sensor_inp( MASK4_4 ) == 0x3c ) {
-                led_out( 0x0 );
-                pattern = 11;
-                cnt1 = 0;
-            }
-            break;
+            case 64:
+                switch( sensor_inp(MASK4_0) )
+                {
+                    case 0x30:		//0011 0000
+                    case 0x40:		//0100 0000
+                    case 0x60:		//0110 0000
+                    case 0x70:		//0111 0000
+                    case 0xe0:		//1110 0000
+                    case 0xf0:		//1111 0000
+
+                        led_out( 0x0 );
+                        handle( 12 );
+                        motor( 70 ,40 );
+                        pattern = 65;
+                        cnt1 = 0;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+                case 65:
+                    if( cnt1 > 400 ) {
+                        pattern = 11;
+                        cnt1 = 0;
+                    }
+                    break;
 
         default:
             /* If neither, return to standby state */
@@ -549,6 +574,9 @@ void main(void)
 /***********************************************************************/
 void init(void)
 {
+
+	SCI2_Asyn_initial();
+
     // System Clock
     SYSTEM.SCKCR.BIT.ICK = 0;               //12.288*8=98.304MHz
     SYSTEM.SCKCR.BIT.PCK = 1;               //12.288*4=49.152MHz

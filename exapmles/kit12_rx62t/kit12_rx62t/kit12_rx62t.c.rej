@@ -1,0 +1,9 @@
+diff a/exapmles/kit12_rx62t/kit12_rx62t/kit12_rx62t.c b/exapmles/kit12_rx62t/kit12_rx62t/kit12_rx62t.c	(rejected hunks)
+@@ -378,7 +378,6 @@
+             if( sensor_inp(MASK4_4) == 0x00 ) { //Test 27.11.19
+                 handle( 15 );
+                 motor( 40 ,31 );
+-                pattern = 54;
+                 pattern = 55;
+                 cnt1 = 0;
+                 break;

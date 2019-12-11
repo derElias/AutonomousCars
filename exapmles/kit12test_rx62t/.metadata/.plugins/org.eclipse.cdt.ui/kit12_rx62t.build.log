@@ -2,54 +2,17 @@
 **** Build of configuration Debug for project kit12_rx62t ****
 
 make all 
+'Scanning started: ../uart.c'
+scandep1 -MM -MP -MF  "uart.d" -MT  "uart.d"  -IC:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -D__RX600=1 -D__BIG=1   -D__FPU=1  -D__RON=1 -D__UCHAR=1 -D__DBL4=1 -D__UBIT=1 -D__BITRIGHT=1 -D__DOFF=1   -D__RENESAS__=1 -D__RENESAS_VERSION__=0x010201 -D__RX=1   -E -quiet -I. -C ../uart.c
+'Finished scanning: ../uart.c'
+
+'Building file: ../uart.c'
+'Invoking: Compiler'
+ccrx -output=obj=./uart.obj -include=C:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -debug -nologo -section=L=C -cpu=rx600 -endian=big  -lang=c "../uart.c"
+'Finished building: ../uart.c'
+
 'Scanning started: C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12_~1\KIT12_~1\KIT12_~1.C'
 scandep1 -MM -MP -MF  "kit12_rx62t/kit12_rx62t.d" -MT  "kit12_rx62t/kit12_rx62t.d"  -IC:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -D__RX600=1 -D__BIG=1   -D__FPU=1  -D__RON=1 -D__UCHAR=1 -D__DBL4=1 -D__UBIT=1 -D__BITRIGHT=1 -D__DOFF=1   -D__RENESAS__=1 -D__RENESAS_VERSION__=0x010201 -D__RX=1   -E -quiet -I. -C C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12_~1\KIT12_~1\KIT12_~1.C
-'Finished scanning: C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12_~1\KIT12_~1\KIT12_~1.C'
-
-'Building file: C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12_rx62t/kit12_rx62t/kit12_rx62t.c'
-'Invoking: Compiler'
-ccrx -output=obj=kit12_rx62t/kit12_rx62t.obj -include=C:\Renesas\e2studio\Tools\Renesas\RX\1_2_1\include -debug -nologo -section=L=C -cpu=rx600 -endian=big  -lang=c "C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12_rx62t/kit12_rx62t/kit12_rx62t.c"
-'Finished building: C:/Users/Riede/Desktop/AutoCar/Repo/exapmles/kit12_rx62t/kit12_rx62t/kit12_rx62t.c'
-
-'Invoking: Linker'
-'Building target:'
-optlnk    -library="C:\WORKSP~1\KIT12_~1\KIT12_~1\Debug\kit12_rx62t.lib"   -noprelink -list="kit12_rx62t.map" -nooptimize -start=B_1,R_1,B_2,R_2,B,R,SU,SI/01000,PResetPRG/0FFFF8000,C_1,C_2,C,C"$"*,D*,P,PIntPRG,W*/0FFFF8100,FIXEDVECT/0FFFFFFD0 -nologo -nomessage -rom=D=R,D_1=R_1,D_2=R_2 -output="C:\WorkSpace\kit12_rx62t\kit12_rx62t\Debug\kit12_rx62t.abs" -subcommand="C:/WorkSpace/kit12_rx62t/kit12_rx62t\Debug\LinkerSubCommand.tmp"
-License expires in 11 days
-
-Optimizing Linkage Editor Completed
-'Finished building:'
-
-'Invoking: Converter'
-optlnk   "C:\WorkSpace\kit12_rx62t\kit12_rx62t\Debug\kit12_rx62t.abs" -form=stype  -output="C:\WorkSpace\kit12_rx62t\kit12_rx62t\Debug\kit12_rx62t.mot"
-
-Optimizing Linkage Editor V.10.02.00.000
-Copyright (C) 1989 (1989 - 2011) Renesas Electronics Corporation and
-Renesas Solutions Corp. All rights reserved.
-SentinelRMS (C) 1989-2010 SafeNet, Inc. All rights reserved.
-License expires in 11 days
-
-Optimizing Linkage Editor Completed
-'Finished building target:'
-
-make --no-print-directory post-build
-
-C:\Renesas\e2studio\DEBUGC~1\RX\RX_CON~1.EXE kit12_rx62t.abs kit12_rx62t.x
-Loading input file kit12_rx62t.abs
-Parsing the ELF input file.....
-24 segments required LMA fixes
-Converting the DWARF information....
-Constructing the output ELF image....
-Saving the ELF output file kit12_rx62t.x
-warning: Code section size (0x743) not a multiple of 4
-warning:     (section starting at 0xFFFF8558)
-warning: Code section at 0xFFFF8C9B not positioned on 4-byte-aligned boundary
-warning: *********************************************************************
-warning: Eclipse hardware debug requires the base address of each code section
-warning: in a big-endian RX application to be 4-byte aligned and the length of
-warning: each code section to be a multiple of 4. You will not be able to
-warning: debug your application as currently linked. Please modify the section
-warning: addresses in your linker settings accordingly and rebuild.
-warning: *********************************************************************
-
-
-'Build complete.'
+C:\Users\Riede\Desktop\AutoCar\Repo\exapmles\KIT12_~1\KIT12_~1\KIT12_~1.C:20:18: fatal error: uart.h: No such file or directory
+compilation terminated.
+make: *** [kit12_rx62t/kit12_rx62t.d] Error 1
