@@ -17,6 +17,8 @@ This program supports the following boards:
 /* Include                              */
 /*======================================*/
 #include "iodefine.h"
+#include "uart.h"
+#include "uart.c"
 
 /*======================================*/
 /* Symbol definitions                   */
@@ -137,6 +139,8 @@ void main(void)
             break;
 
         case 11:
+        	SCI2_PullString("I am in case 11");
+
             /* Normal trace */
             if( check_crossline() ) {   /* Cross line check            */
                 pattern = 21;
@@ -550,6 +554,9 @@ void main(void)
 /***********************************************************************/
 void init(void)
 {
+
+	SCI2_Asyn_initial();
+
     // System Clock
     SYSTEM.SCKCR.BIT.ICK = 0;               //12.288*8=98.304MHz
     SYSTEM.SCKCR.BIT.PCK = 1;               //12.288*4=49.152MHz
