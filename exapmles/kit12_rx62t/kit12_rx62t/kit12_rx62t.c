@@ -17,6 +17,8 @@ This program supports the following boards:
 /* Include                              */
 /*======================================*/
 #include "iodefine.h"
+#include "uart.h"
+
 
 /*======================================*/
 /* Symbol definitions                   */
@@ -443,12 +445,16 @@ void main(void)
             }
             break;
 
-            case 55:
-                if( cnt1 > 600 ) {
-                    pattern = 11;
-                    cnt1 = 0;
-                }
-                break;
+
+        case 55:
+          /* search line after case 54 */
+          if (sensor_inp(MASK4_4) == 0xf8){
+            handle(-8);
+            motor(-100,40) ;//left motor reverse and right motor forward
+            pattern = 11;
+            cnt1=0;
+          }
+          break;
 
 
         case 61:
