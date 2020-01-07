@@ -231,7 +231,7 @@ void main(void)
             }
 
             if( check_rightline() ) {   // Right half line detection check
-                pattern = 71;
+                pattern = 51;
                 break;
             }
             if( check_leftline() ) {    //Left half line detection check
@@ -241,6 +241,7 @@ void main(void)
 
             if( sensor_inp(MASK3_3) == 0x06 ) {
                 pattern = 11;
+                break;
             }
             break;
 
@@ -252,7 +253,7 @@ void main(void)
             }
 
             if( check_rightline() ) {   // Right half line detection check
-                pattern = 71;
+                pattern = 51;
                 break;
             }
             if( check_leftline() ) {    // Left half line detection check/
@@ -262,6 +263,7 @@ void main(void)
 
             if( sensor_inp(MASK3_3) == 0x60 ) {
                 pattern = 11;
+                break;
             }
             break;
 
@@ -438,8 +440,7 @@ void main(void)
 
         case 53:
             /* Trace, lane change after right half line detection */
-
-            if( sensor_inp(MASK4_4) == 0x00 ) {
+            if( sensor_inp(MASK4_4) == 0x00 ) { // if all sensors receive null
                 handle( 15 );
                 motor( 40 ,31 );
                 pattern = 54;
