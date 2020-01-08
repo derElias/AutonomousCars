@@ -751,11 +751,42 @@ int check_crossline( void )
     int ret;
 
     ret = 0;
-    b = sensor_inp(MASK3_3);
-    if( b==0xe7 ) {
+    b = sensor_inp(MASK3_3);      // MASK4_4 0xff= 1111 1111; 0x7e = 0111 1110 ; 0x3c =0011 1100
+    if( b==0xe7 ) { // 1110 0111
         ret = 1;
     }
     return ret;
+}
+
+/**********************************************************************/
+/* Definition:
+/* Check Gap between Crossline 0000 0000
+/* Return values:
+/*  still on crossline = 0, gap = 1
+/*********************************************************************/
+int check_gap (void){
+  int ret;
+  ret = 0;
+  if ((sensor_inp (MASK2_0) == 0x00) || sensor_inp (MASK0_2) == 0x00){
+    ret = 1;
+  }
+  return ret;
+}
+
+/**********************************************************************/
+/* Definition:
+/* Check if car is on track
+/* Return values:
+/*  still on track = 0 , not on track = 1
+/*********************************************************************/
+
+int check_on_track (void){
+  int ret;
+  ret = 0; // on track
+  if (sensor_inp (MASK4_4) == 0x00){ //0000 0000
+    ret = 1;
+  }
+  return ret;
 }
 
 /***********************************************************************/
